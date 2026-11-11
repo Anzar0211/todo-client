@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-canvas font-sans text-ink antialiased; }
+:focus-visible { @apply outline-2 outline-offset-2 outline-brand; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Prevent horizontal overflow from date strips / sheets on small phones */
+html, body, #root { min-height: 100%; }
