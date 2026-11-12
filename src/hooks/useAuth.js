@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearAuthError, loadSession, login, logout, register } from '../store';
+import { clearAuthError, clearTasks, loadSession, login, logout, register } from '../store';
 
 export function useAuth() {
   const dispatch = useDispatch();
@@ -12,6 +12,7 @@ export function useAuth() {
   const clearError = useCallback(() => dispatch(clearAuthError()), [dispatch]);
   const signOut = useCallback(() => {
     dispatch(logout());
+    dispatch(clearTasks());
   }, [dispatch]);
 
   return {
