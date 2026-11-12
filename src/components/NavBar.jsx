@@ -76,7 +76,7 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-20 bg-canvas/90 backdrop-blur">
-      <div className="shell py-3">
+      <div className="shell py-3 xl:py-4 2xl:py-5">
         {searching ? (
           <div className="space-y-3">
             <button

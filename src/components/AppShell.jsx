@@ -7,10 +7,10 @@ export default function AppShell() {
   const { error, clearError } = useTasks();
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-canvas">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(ellipse_at_top,_rgba(67,97,238,0.12),_transparent_60%)]" />
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-canvas">
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(ellipse_at_top,_rgba(67,97,238,0.12),_transparent_60%)] 2xl:h-[28rem]" />
       <NavBar />
-      <div className="shell pb-28 pt-6 lg:pb-16 lg:pt-8">
+      <div className="shell flex flex-1 flex-col pb-28 pt-6 lg:pb-16 lg:pt-8 xl:pt-10 2xl:pb-20 2xl:pt-12">
         <Outlet />
       </div>
       {error && (
