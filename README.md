@@ -25,15 +25,16 @@ App listens on `http://localhost:5173` by default.
 - **Onboarding** — Welcome screen at `/welcome` with a Get Started CTA; completion is stored in `localStorage`.
 - **Authentication** — Login and register forms at `/login` and `/register`, JWT stored in `localStorage`, and session restore via `/api/auth/me`.
 - **Home dashboard** — Protected app shell with week strip, completion stats, and the day's task list (toggle complete / delete / open for edit).
+- **Task sheet** — Bottom/centered sheet to create or edit tasks (title, date, start/end time, description).
 
 ## Project structure
 
 ```
 src/
   api/                        # HTTP client, auth + task APIs, token storage
-  components/                 # Onboarding, AuthForm, AppShell, NavBar, Home, TaskRow
+  components/                 # Onboarding, AuthForm, AppShell, NavBar, Home, TaskRow, TaskSheet
   hooks/                      # useAuth, useTasks, useUi, useDebouncedValue
-  services/                   # date and week helpers
+  services/                   # date, week, and task form helpers
   storage/onboardingStorage.js
   store/                      # auth, tasks, and UI slices + thunks
 ```

@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from './NavBar';
+import TaskSheet from './TaskSheet';
 import { useTasks } from '../hooks/useTasks';
 
 export default function AppShell() {
@@ -21,6 +22,7 @@ export default function AppShell() {
           {error} <span className="underline">Dismiss</span>
         </button>
       )}
+      <TaskSheet />
     </div>
   );
 }
