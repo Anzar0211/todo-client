@@ -6,6 +6,7 @@ import AppShell from './components/AppShell';
 import AuthForm from './components/AuthForm';
 import Home from './components/Home';
 import Onboarding from './components/Onboarding';
+import Search from './components/Search';
 
 function ProtectedRoutes() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -31,6 +32,7 @@ function ProtectedRoutes() {
     <Routes>
       <Route element={<AppShell />}>
         <Route index element={<Home />} />
+        <Route path="search" element={<Search />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
