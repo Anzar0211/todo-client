@@ -4,10 +4,11 @@ node_modules/
 # build
 dist/
 
-# env (keep .env.example if you add one)
+# env (keep example templates tracked)
 .env
 .env.*
 !.env.example
+!.env.*.example
 
 # logs / debug
 *.log

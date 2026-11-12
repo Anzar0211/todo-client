@@ -2,19 +2,36 @@
 
 React frontend for the todo app. Built with Vite, Tailwind CSS, Redux Toolkit, and React Router.
 
-API requests to `/api` are proxied to `http://localhost:5000` (see `vite.config.js`). Run the [server](../server) alongside the client.
+In development, API requests to `/api` are proxied to the local server (see `vite.config.js` and `VITE_DEV_PROXY_TARGET`). Run the [server](../server) alongside the client.
 
 ## Setup
 
 ```bash
 npm install
+cp .env.development.example .env.development
+cp .env.production.example .env.production
 ```
+
+Edit `.env.production` and set `VITE_API_URL` to your deployed API before building.
+
+## Environment
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_URL` | Base URL for API calls (default `/api`) |
+| `VITE_DEV_PROXY_TARGET` | Dev-only proxy target for `/api` (default `http://localhost:5000`) |
+
+Files:
+
+- `.env.development` — used by `npm run dev`
+- `.env.production` — used by `npm run build` / `npm run preview`
+- `*.example` — tracked templates (copy and fill in)
 
 ## Run
 
 ```bash
-npm run dev      # development (Vite)
-npm run build    # production build
+npm run dev      # development (Vite, `.env.development`)
+npm run build    # production build (`.env.production`)
 npm run preview  # preview production build
 ```
 
