@@ -23,13 +23,17 @@ App listens on `http://localhost:5173` by default.
 ## Features
 
 - **Onboarding** — Welcome screen at `/welcome` with a Get Started CTA; completion is stored in `localStorage`.
+- **Authentication** — Login and register forms at `/login` and `/register`, JWT stored in `localStorage`, and session restore via `/api/auth/me`.
 
 ## Project structure
 
 ```
 src/
+  api/                        # HTTP client, token storage, auth API
   components/Onboarding.jsx
+  components/AuthForm.jsx
+  hooks/useAuth.js
   hooks/useUi.js
   storage/onboardingStorage.js
-  store/                      # Redux store (UI slice)
+  store/                      # auth + UI slices and auth thunks
 ```
