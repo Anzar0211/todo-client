@@ -19,3 +19,17 @@ npm run preview  # preview production build
 ```
 
 App listens on `http://localhost:5173` by default.
+
+## Features
+
+- **Onboarding** — Welcome screen at `/welcome` with a Get Started CTA; completion is stored in `localStorage`.
+
+## Project structure
+
+```
+src/
+  components/Onboarding.jsx
+  hooks/useUi.js
+  storage/onboardingStorage.js
+  store/                      # Redux store (UI slice)
+```

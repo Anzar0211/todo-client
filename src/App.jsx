@@ -1,9 +1,13 @@
-import React from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import Onboarding from './components/Onboarding';
 
-const App = () => {
+export default function App() {
   return (
-    <div>App</div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/welcome" element={<Onboarding />} />
+        <Route path="*" element={<Navigate to="/welcome" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
